@@ -107,6 +107,7 @@ venv.bak/
 .idea
 .settings
 *.iml
+.vscode
 
 # Mac OS X
 .DS_Store

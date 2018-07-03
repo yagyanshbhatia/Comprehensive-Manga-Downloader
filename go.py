@@ -3,11 +3,12 @@ import os
 import time
 import zipfile
 from fpdf import FPDF
+from variables import chromedriver
 
-chromedriver = "/home/yagyansh/Desktop/chromedriver_linux64/chromedriver"
 chrome_options = webdriver.ChromeOptions()
-prefs = {'download.default_directory' : os.getcwd()}
+prefs = {'download.default_directory': os.getcwd()}
 chrome_options.add_experimental_option('prefs', prefs)
+# chrome_options.add_argument('--headless')
 driver = webdriver.Chrome(chromedriver, chrome_options=chrome_options)
 
 name = input("Enter the name of Anime to search - ").lower()
@@ -64,7 +65,7 @@ while True:
         break
 
 def natural_keys(text):
-    c = text.split(".")[0].split('_')[1]
+    c = text.split(".")[0].split('_')[-1]
     return int(c)
 
 listFiles = []
